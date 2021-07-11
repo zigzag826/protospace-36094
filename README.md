@@ -12,7 +12,7 @@
 | position           | text   | null: false |
 
 ### Association
-- has_many :prototype
+- has_many :prototypes
 - has_many :comments
 
 ## prototypes テーブル
@@ -22,7 +22,7 @@
 | title              | string     | null: false        |
 | catch_copy         | text       | null: false        |
 | concept            | text       | null: false        |
-| user               | references |                    |
+| user               | references | foreign_key: true  |
 
 ### Association
 - belongs_to :users
@@ -33,8 +33,8 @@
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | text      | text       | null: false,                   |
-| user      | references |                                |
-| prototype | references |                                |
+| user      | references | foreign_key: true              |
+| prototype | references | foreign_key: true              |
 
 ### Association
 - belongs_to :users
