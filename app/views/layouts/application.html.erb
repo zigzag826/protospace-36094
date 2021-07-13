@@ -20,7 +20,7 @@
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout, method: :get %>
-              <%= link_to "New Proto", root_path, class: :nav__btn %>
+              <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
               </div>
             <% else %>
             <div class="nav__right">
@@ -31,10 +31,6 @@
         </div>
       </div>
     </header>
-    <main>
-    <% if user_signed_in? %>
-    <h1>こんにちは、<%= current_user.name %>さん</h1>
-    <% end %>
     <%= yield %>
     <footer class="footer">
       <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
